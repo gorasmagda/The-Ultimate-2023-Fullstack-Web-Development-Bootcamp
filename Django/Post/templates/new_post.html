@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title%}
+    Upload a new image
+{% endblock title %}
+
+{%block body%}
+{% comment %} alows us to send file from site to server, enctype="multipart/form", {%csrf_token%} {% endcomment %}
+    <form method="POST" action="" enctype="multipart/form-data" class="col-sm-4 offset-5 py-5 my-5">
+        <h2> Upload an image! </h2> 
+        {% csrf_token%}
+        {{form.as_p}}
+        <div>
+            <button type="submit" class="btn btn-lg btn-success"> Submit form </button>
+        </div> 
+{%endblock%}
+
